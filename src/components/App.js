@@ -17,12 +17,12 @@ function App()
 		{edit?<><textarea value={editinput} onChange={(event)=>{setEditInput(event.target.value)}}></textarea>
 		<button onClick={()=>{if(editinput){newArr.splice(currenteditIndex,1),newArr.splice(currenteditIndex,0,editinput),setList([...newArr]),setEdit(false)}}}>Save</button></>:""}
 		
-		<ul>
+		
 			{list.map((current,index)=>{return <> <li className="list">{current}</li>
 			<button onClick={()=>{newArr.splice(index,1)
 			setList([...newArr])}}>Delete</button>
 			<button onClick={()=>{setEdit(true),setEditInput(list[index]),setCurrentEditIndex(index)}}>Edit</button></>})}
-		</ul>
+		
     </div>
     );
 }
