@@ -13,7 +13,7 @@ function App()
     return (
     <div id="main">
         <textarea id="task" value={input} onChange={(event)=>{setInput(event.target.value)}} ></textarea>
-        <button onClick={()=>{if(input){setList([...list,input])}}} id="button">Add</button>
+        <button onClick={()=>{if(input){setList([...list,input]),setInput("")}}} id="button">Add</button>
 		{edit?<><textarea value={editinput} onChange={(event)=>{setEditInput(event.target.value)}}></textarea>
 		<button onClick={()=>{if(editinput){newArr.splice(currenteditIndex,1),newArr.splice(currenteditIndex,0,editinput),setList([...newArr]),setEdit(false)}}}>Save</button></>:""}
 		
